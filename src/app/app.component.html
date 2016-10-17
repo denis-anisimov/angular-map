@@ -1,0 +1,11 @@
+<h1>
+  Google map search
+</h1>
+<div>
+	<span class="label">Enter a word search for:</span>
+	<input #searchBox id="search-box" (change)="search(searchBox.value)" />
+</div> 
+<div id="app-map">
+	<app-map [query]="query"  (markerSelected)="onResultSelect($event)"></app-map>
+</div>
+<app-place *ngIf="place" [place]="place"></app-place>

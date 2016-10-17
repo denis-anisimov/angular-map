@@ -1,0 +1,15 @@
+<google-map-search  [query]="query" (google-map-search-results)="setSearchResult($event)" #mysearch >
+  </google-map-search>
+<google-map #mymap 
+	 [latitude]="latitude" [longitude]="longitude"  click-events="true"  
+	(google-map-click)="onMapClick($event)" 
+	(google-map-dblclick)="onMapDblClick($event)"
+	(google-map-ready)="mapReady()"
+	>
+		<google-map-marker *ngFor="let result of results"  
+			[latitude]="result.latitude"  [longitude]="result.longitude" animation="DROP" 
+			[title]="result.name"
+			click-events="true"
+			(google-map-marker-click)="onMarkerClick(result)">
+		</google-map-marker>
+</google-map>
