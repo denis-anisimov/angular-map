@@ -1,9 +1,9 @@
 <div id="details">
 	<img [src]="place.icon" style="display:block; margin-bottom: 10px">
-	<div><span class="caption">Name: </span>{{place.name}}</div>
-	<div><span class="caption">Address: </span>{{place.formatted_address}}</div>
-	<div *ngIf="place.rating"><span class="caption">Rating: </span>{{place.rating}}</div>
-	<div *ngIf="place.photos" style="margin-top: 10px">
+	<div id="name"><span class="caption">Name: </span>{{place.name}}</div>
+	<div id="address"><span class="caption">Address: </span>{{place.formatted_address}}</div>
+	<div *ngIf="place.rating" id="rating"><span class="caption">Rating: </span>{{place.rating}}</div>
+	<div *ngIf="place.photos" style="margin-top: 10px" id="photos">
 	   <span class="caption">Photos:</span>
 		<div *ngFor="let link of place.photos" [innerHTML]="link.html_attributions"></div>
 	</div>

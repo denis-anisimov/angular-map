@@ -8,8 +8,10 @@ import { Result } from './result.ts';
 })
 export class MapComponent implements OnInit {
 
-   @ViewChild('mymap') map:ElementRef;
-   @ViewChild('mysearch') search:ElementRef;
+   @ViewChild('mymap') 
+   private map:ElementRef;
+   @ViewChild('mysearch') 
+   private search:ElementRef;
    
    latitude : number =37.77493;
    longitude: number = -122.41942;
